@@ -27,7 +27,7 @@ Note: Stick to the datasets of your choice for all the following tasks.
 
 1.6 Dimensionality Reduction: Apply feature selection methods, followed by a dimensionality reduction method (only 1, that suits your dataset e.g., PCA or t-SNE or UMAP). Report difference in accuracy, space and time-complexity. (Need not be on HDP sandbox) <br></br>
 
-1.7 Machine Learning in PySpark: Clustering, Classification, Regression 
+1.7 Machine Learning in PySpark: Clustering, Classification, Regression <br></br>
 Clustering: use KMeans with different values of k, report silhouette scores, and explain clusters <br></br>
 Classification: pick a target other than sentiment, try two algorithms, and compare results <br></br>
 Regression: predict a numeric target such as rating, price, or trip duration using Linear Regression and Gradient Boosted Trees. Report metrics like RMSE or MAE, use train/validation split, and discuss feature importance. <br></br>
