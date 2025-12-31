@@ -44,7 +44,6 @@ amazon_mapreduce -> java files with Linux execution command for custom MapReduce
 hive -> commands to configure relevant tables <br><br>
 pig -> pig scripts for batch analysis on raw datasets <br><br>
 spark -> contains NLP, sentiment analysis and ML based codes <br><br>
-screenshots -> screenshots of implemented work <br><br>
 
 # System Requirements
 Software included -
