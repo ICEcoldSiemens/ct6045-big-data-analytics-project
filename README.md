@@ -63,15 +63,16 @@ Run HDP 2.6.5 sandbox and use Ambari to run all services
 Useful commands: 
 - "hdfs dfs -ls" (will verify HDFS status)
 - "hdfs dfs -mkdir -p /user/maria_dev/raw_datasets" and "hdfs dfs -mkdir -p /user/maria_dev/clean_datasets"  (create raw and clean directories for data)
-- "hdfs dfs -put data/raw/amazon_review/test.csv /user/maria_dev/raw_datasets" and "hdfs dfs -put data/raw/amazon_review/yellow_tripdata_2016-03.csv /user/maria_dev/raw_datasets"  (move unclean datasets from local system into HDFS located directories)
+- "hdfs dfs -put data/raw/amazon_review/test.csv /user/maria_dev/raw_datasets/raw_amazon_datasets" and "hdfs dfs -put data/raw/nyc_taxi /user/maria_dev/raw_datasets/raw_nyc_taxi_datasets"  (move unclean datasets from local system into HDFS located directories)
+(remember to extract nyc taxi csvs prior to Hive and Pig)
 
 
 Run Hive, navigate to 'hive' folder and create tables
-- "hive -f amazon_tables.hql" and "hive -f nyc_tables.hql"
-To verify, run "SELECT * FROM amazon_reviews LIMIT 5" (this should output the first five records) 
+- "hive -f amazon_table_RAW.hql" and "hive -f nyc_taxi_table_CLEANED.hql" (the former will hold raw amazon review data, the latter will hold clean NYC hourly stats from Pig output)
+To verify, run nyc_taxi_table_validation.hql or amazon_review_table_validation.hql (this should output the first five records) 
 
 Run Pig for ETL 
-Run the following commands: pig pig/amazon_reviews.pig and pig pig/nyc_taxi.pig where output is stored on "/user/maria_dev/clean_datasets/clean_amazon_dataset" and "/user/maria_dev/clean_datasets/clean_nyc_taxi_dataset"
+Run the following commands: pig pig/amazon_reviews.pig and pig pig/nyc_taxi.pig where output is stored on "/user/maria_dev/clean_datasets/clean_amazon_dataset" and "/user/maria_dev/clean_datasets/clean_nyc_hourly"
 
 # Custom MapReduce Job, NLP and Sentiment Analysis
 Run the custom MapReduce job using screenshot of command located in amazon_mapreduce file with Java code.
